@@ -1,0 +1,25 @@
+{
+  "name": "apiproject",
+  "version": "1.0.0",
+  "description": "An API REST PROJECT",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/caphyr/projectapi.git"
+  },
+  "author": "Juan Negrin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caphyr/projectapi/issues"
+  },
+  "homepage": "https://github.com/caphyr/projectapi#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mysql": "^2.15.0",
+    "nodemon": "^1.12.7"
+  }
+}
