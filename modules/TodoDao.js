@@ -19,7 +19,7 @@ var TodoDao = {
             else {
                 if(result.length == 0) {
                     console.log({ 'Internal DB warning' : 'No se encontraron resultados.'});
-                    callback(null, false);
+                    callback(null, result);
                 }
                 else {
                     var sql = 'DELETE FROM todos WHERE todoID = ' + db.escape(todoId);
@@ -86,6 +86,14 @@ var TodoDao = {
                 }
             }
         });
+    },
+
+    addTask:function(body, callback){
+        db.connect();
+        var sql = 'INSERT INTO todos (PersonaID, Titulo, Descripcion) '
+			+ 'VALUES (' + db.escape(body.personaId) + ',' + db.escape(body.titulo) + ',' + db.escape(body.descripcion) + ')';
+        db.query(sql, callback);
+        db.disconnect();
     }
 };
 

@@ -41,7 +41,7 @@ router.delete('/todos/:id', function(req, res){
 				console.error(err);
 				res.json({ mensaje : 'Error en la comunicación con la base de datos.'});
 			}
-			else if(result != true){
+			else if(result.length == 0){
 				res.status(404);
 				res.json({ mensaje : 'No se encontro el recurso solicitado.'})
 			}
@@ -81,9 +81,25 @@ router.put('/todos/:id/alterar-completado', function(req, res){
 	}
 });
 
-router.post('/todos/', function(req, res){
-	if(req.body){
-		d
+router.post('/todos', function(req, res){
+	if( (req.body.personaId != undefined && req.body.titulo != undefined) && (req.body.personaId != "" && req.body.titulo != "") ){
+		if(!req.body.descripcion) {
+			req.body.descripcion = "";
+		}
+		todo.addTask(req.body, function(err){
+			if(err) {
+				res.status(500);
+				res.json({ mensaje : 'Error en la comunicación con la base de datos.'})
+			}
+			else {
+				res.status(200);
+				res.json({ mensaje: 'To-Do agregado!'});
+			}
+		})
+	}
+	else {
+		res.status(400);
+		res.json({ mensaje : 'Bad request'});
 	}
 });
 
