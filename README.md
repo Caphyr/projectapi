@@ -25,12 +25,12 @@ An API REST PROJECT
 	"descripcion" : "(string)"
 }
 ```
-- Para modificar un To-Do `PUT v1/todos/:id`. Enviar un BODY en formato JSON con el siguiente formato:
+- Para modificar un To-Do `PUT v1/todos/:id`. el `:id` debe ser un **ID** valido de un To-Do. Enviar un BODY en formato JSON con el siguiente formato:
 ```javascript
 {
-	"personaId" : "(int)",
 	"titulo" : "(string)",
 	"descripcion" : "(string)"
+	"completada" : "true | false"
 }
 ```
 
