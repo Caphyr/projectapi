@@ -32,10 +32,9 @@ An API REST PROJECT
 	"titulo" : "(string)",
 	"descripcion" : "(string)"
 }
+```
 
-**This is bold text**
-
-__Nota__: Si no se respetan los formatos anteriores provocara un error en la petición.
+**Nota:** Si no se respetan los formatos anteriores provocara un error en la petición.
 
 
 ## Integrantes:
