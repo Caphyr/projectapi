@@ -6,8 +6,8 @@ An API REST PROJECT
 
 ## To-Do's list
 
-- [x] /v1/todos/listar/:id - Mediante un GET el servidor responde con un JSON con los TO-DO segun un ID de una persona.
-- [x] /v1/todos/:todoid - Mediante DELETE el servidor eliminar un TO-DO de la base de datos.
+- [x] Mediante un GET el servidor responde con un JSON con los TO-DO segun un ID de una persona.
+- [x] Mediante DELETE el servidor eliminar un TO-DO de la base de datos.
 - [x] Mediante PUT modifica el estatus de un TO-DO.
 - [X] Mediante PUT modifica el TO-DO.
 - [x] Mediante POST agrega un nuevo TO-DO.
