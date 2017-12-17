@@ -33,7 +33,7 @@ An API REST PROJECT
 	"descripcion" : "(string)"
 }
 
-**Nota:** Si no se respetan los formatos anteriores provocara un error en la petición.
+**Nota**: Si no se respetan los formatos anteriores provocara un error en la petición.
 
 
 ## Integrantes:
