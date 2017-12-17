@@ -20,9 +20,9 @@ An API REST PROJECT
 - Para crear un nuevo ToDo: `POST /todos`. Enviar un BODY en formato JSON con lo siguiente
 ```js
 {	
-	PersonaID: (int),
-	Titulo: (string),
-	Descripcion: (string)
+	"personaId" : "(int)",
+	"titulo" : "(string)",
+	"descripcion" : "(string)"
 }
 ```
 
