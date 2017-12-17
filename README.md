@@ -18,8 +18,9 @@ An API REST PROJECT
 - Para cambiar el estado de un ToDo (Incompleto/Completado): `PUT /todos/:id/alterar-completado`
 - Para eliminar un ToDo: `DELETE /todos/:todoid`. (:todoid debe ser reemplazado por el ID del ToDo).
 - Para crear un nuevo ToDo: `POST /todos`. Enviar un BODY en formato JSON con lo siguiente
-```json
-{	PersonaID: (int),
+```js
+{	
+	PersonaID: (int),
 	Titulo: (string),
 	Descripcion: (string)
 }
