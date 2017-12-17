@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var todo = require('../modules/TodoDao.js');
+var todo = require('../modules/TodoDao2.js');
 
 router.get('/todos', function(req, res) {
 	var personaId = req.query.lista;
@@ -41,7 +41,7 @@ router.delete('/todos/:id', function(req, res){
 				console.error(err);
 				res.json({ mensaje : 'Error en la comunicación con la base de datos.'});
 			}
-			else if(result.length == 0){
+			else if(result == undefined){
 				res.status(404);
 				res.json({ mensaje : 'No se encontro el recurso solicitado.'})
 			}
@@ -65,13 +65,13 @@ router.put('/todos/:id/alterar-completado', function(req, res){
 				console.error(err);
 				res.json({ mensaje : 'Error en la comunicación con la base de datos.'});
 			}
-			else if(result) {
-				res.status(200);
-				res.json({ mensaje: 'To-Do Modificado' });
-			}
-			else {
+			else if(result == undefined) {
 				res.status(404);
 				res.json({ mensaje : 'No se encontro el recurso solicitado'});
+			}
+			else {
+				res.status(200);
+				res.json({ mensaje: 'To-Do Modificado' });
 			}
 		});
 	}
@@ -100,6 +100,43 @@ router.post('/todos', function(req, res){
 	else {
 		res.status(400);
 		res.json({ mensaje : 'Bad request'});
+	}
+});
+
+router.put('/todos/:id', function(req, res){
+	var id = req.params.id;
+	if(!isNaN(id)){
+		var body = req.body;
+		if((body.titulo != undefined && body.descripcion != undefined && body.completada != undefined)){
+			if(body.titulo != "" && body.descripcion != "" && body.completada != ""){
+				todo.modifyTask(id, body, function(err, result) {
+					if(err) {
+						res.status(500);
+						res.json({ mensaje : 'Error en comunicación con la base de datos.'} );
+					}
+					else if(result == undefined) {
+						res.status(404);
+						res.json({ mensaje : 'No se encontro el recurso solicitado'});
+					}
+					else {
+						res.status(200);
+						res.json({ mensaje : 'To-Do modificado'});
+					}
+				});
+			}
+			else {
+				res.status(400);
+				res.json({ mensaje : 'Bad request' });
+			}
+		}
+		else {
+			res.status(400);
+			res.json({ mensaje : 'Bad request.' });
+		}
+	}
+	else{
+		res.status(400);
+		res.json({ mensaje : 'Bad request.' });
 	}
 });
 

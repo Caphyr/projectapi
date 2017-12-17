@@ -42,6 +42,28 @@ var TodoDao = {
         });
     },
 
+    modifyTask:function(todoId, body, callback) {
+        db.connect();
+        this.getTask(todoId, function(err, result) {
+            if(err) {
+                console.log({ "Internal DB error" : err })
+                callback(err, null);
+            }
+            else {
+                if(result.length == 0) {
+                    console.log({ 'Internal DB warning' : 'No se encontraron resultados.'});
+                    callback(null, result);
+                }
+                else {
+                    callback(null, result);
+                    var sql = 'UPDATE todos SET Titulo = ' + db.escape(body.titulo) + ', Descripcion = ' + db.escape(body.descripcion) + ', Completada = ' + db.escape(body.completada) + ' WHERE todoID = ' + db.escape(todoId);
+                    db.query(sql, callback);
+                }
+            }
+            db.disconnect();
+        });
+    },
+
     getTaskStatus:function(todoId, callback){
         var sql = 'SELECT Completada FROM todos WHERE todoID = ' + db.escape(todoId);
         db.query(sql, function(err, result) {
