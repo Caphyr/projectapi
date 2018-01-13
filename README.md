@@ -2,11 +2,35 @@
 
 An API REST PROJECT
 
-## Contents
-
-- [Installing](#Installing)
-
 ## Installing
+
+First of all, you should install *NPM* and *Node.js*. Please take a look and install both [Install NPM and Node](https://www.npmjs.com/get-npm) 
+
+After that, do the next:
+
+I supossed you're on your project folder.
+
+> npm install
+
+to install all packages and modules.
+
+It could take a while...
+
+Before run our server we should run a MySQL client and import our credentials.sql file.
+[Credential](./credentials.sql)
+
+Now, run your server with the following:
+
+> node app.js
+
+After that, and if everything going well, you should see the following message 
+> Server app listening on port 3000!
+
+So, please go to 
+> localhost:3000/v1/
+
+And finally, that's all.
+
 
 ## To-Do's list
 
