@@ -23,7 +23,7 @@ Now, run your server with the following:
 
 > node app.js
 
-After that, and if everything going well, you should see the following message 
+After that, and if everything going well, you'll see the following message 
 > Server app listening on port 3000!
 
 So, please go to 
