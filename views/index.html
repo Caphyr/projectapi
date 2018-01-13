@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <style>
+        .fondo{
+            background: url('img/slider.jpg');
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+            border-bottom: 0.5px groove #F0F1E9;
+        }
+        .barra{
+            border-bottom: 2px solid #F0F1E9;
+        }
+
+    </style>
+
+    <!--Font Awesome CDN-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="https://use.fontawesome.com/a740c8f3c4.js"></script>
+
+  </head>
+  <body>
+
+    <!--Barra de Navegacion -->
+    <div class="container-fluid navbar-light bg-light fixed-top barra">
+        <nav class="navbar navbar-expand-lg container">
+            <a class="navbar-brand" href="#"><img src="img/logo-bar.png"   alt="logotype"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a href="#" class="btn btn-outline-danger" role="button" aria-pressed="true">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#me">Conocenos</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="login.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="Register.html">Sign up</a>
+                        </li>
+                    </ul>
+                </div>
+        </nav>
+    </div>
+    <!--Fin de la Barra de navegacion-->
+
+    <!--Comienza el Slider-->
+    <div class="container-fluid fondo">
+      <div class="container d-flex flex-column justify-content-center h-100 text-white align-items-center">
+        <h1>La mejor herramienta para organizar tus tareas</h1>
+        <div>
+            <a href="#"class="btn btn-danger">Leer más</a>
+        </div>
+      </div>
+    </div>
+    <!--Termina el Slider-->
+
+    <!--Seccion 1-->
+    <div class="container py-5">
+        <div class="row align-items-center text-right">
+            <div class="col-md-6">
+                <h2>Crea, gestiona fácilmente una lista</h2>
+                <br>
+                <p>¿Necesitas organizar todas tus tareas?, con nuestro sistema intuitivo podrás crear listas que te permitiran organizar fácilmente
+                esas tareas e ir verificando cada una, ¡Que esperas, prueba nuestra herramienta!</p>
+                <div>
+                        <a href="ToDoList.html"class="btn btn-danger">Crear nuevo TodoList</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="img/img1.jpg" class="img-fluid" alt="img_1" width="500px">
+            </div>
+
+        </div>
+    </div>
+    <!--Termina la Seccion 1-->
+
+    <!--Conocenos-->
+    <div class="container" id="me">
+        <div class="row justify-content-center" id="title">
+            <h2><strong>Conoce a los desarrolladores</strong></h2>
+        </div>
+        <div class="row align-items-center" id="contenido">
+            <div class="col" id="inside">
+                <div class="col-xs-7">
+                    <img src="img/slider.jpg" class="rounded-circle" alt="img1" id="imgi">
+                </div>
+                <div class="col pt-4">
+                    <p><strong>Pedro de León</strong></p>
+                    <p>Estudiante de Ingeniería Informática UCAB</p>
+                </div>
+            </div>
+            <div class="col" id="inside">
+                <div class="col-xs-7">
+                    <img src="img/slider.jpg" class="rounded-circle" alt="img1" id="imgi">
+                </div>
+                <div class="col pt-4">
+                    <p><strong>Emanuel Di Cristofaro</strong></p>
+                    <p>Estudiante de Ingeniería Informática UCAB</p>
+                </div>
+            </div>
+            <div class="col" id="inside">
+                <div class="col-xs-7">
+                    <img src="img/slider.jpg" class="rounded-circle" alt="img1" id="imgi">
+                </div>
+                <div class="col pt-4">
+                    <p><strong>Juan Negrín</strong></p>
+                    <p>Estudiante de Ingeniería Informática UCAB</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Termina Conocenos-->
+
+    <!--Banner-->
+    <div class="container-fluid bg-danger text-left text-white">
+        <div>
+            <h5>Siguenos en redes sociales</h5>
+            <div class="display-5">
+                <i class="fa fa-facebook-square pr-2" aria-hidden="true"></i>
+                <i class="fa fa-twitter-square pr-2" aria-hidden="true"></i>
+                <i class="fa fa-instagram pr-2" aria-hidden="true"></i>
+                <i class="fa fa-youtube-square" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+    <!--Termina el Banner-->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+  </body>
+</html>

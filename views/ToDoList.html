@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="css/tolist.css">
+    <script src="js/sidebar.js"></script>
+    <!--Font Awesome CDN-->
+    <script defer src="fontawesome-free-5.0.2/svg-with-js/js/fontawesome-all.js"></script>
+    <!-- Bootstrap CSS -->
+    <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/3.0.2/normalize.css">
+</head>
+<body>
+    <!--Sidebar-->
+    
+    <div id="wrapper">
+        <div id="sidebar-wrapper">
+        
+        </div>
+   
+    <!--Fin Sidebar-->
+    
+    <!--Header-->
+    <header>
+    <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 ">
+                        <div class="row">
+                            <div class="col-6">
+                                <h1 class="header-title">Bienvenido,</h1>
+                            </div>
+                            <div class="col-6" id="btn">
+                                    <!-- Button to Open the Modal -->
+                                    <a href="#" class="btn btn-danger" data-toggle="modal"data-target="#myModal">Nueva Tarea</a>
+                                  
+                                    <!-- The Modal -->
+                                    <div class="modal fade" id="myModal">
+                                      <div class="modal-dialog">
+                                        <div class="modal-content">
+                                        
+                                          <!-- Modal Header -->
+                                          <div class="modal-header">
+                                            <h4 class="modal-title">Nueva lista</h4>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                          </div>
+                                          
+                                          <!-- Modal body -->
+                                          <div class="modal-body">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="" class="control-label">Lista 1</label>
+                                                    <input type="text" class="form-control input-lg">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="" class="control-label">Tareas</label>
+                                                    <textarea name="" id="" cols="30" rows="2" class="form-control"></textarea>
+                                                </div>
+                                            </form>
+                                          </div>
+                                          
+                                          <!-- Modal footer -->
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Guardar</button>
+                                          </div>
+                                          
+                                        </div>
+                                      </div>
+                                    </div>
+                        </div>
+                </div>
+            </div>
+        </div>   
+    </header> 
+    <!--Fin del header-->
+    
+    <!-- Principal-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-info">
+                    <div class="list-default">
+                        <div class="contenedor"></div>
+                        <li class="list-group-item"  id="elemento">
+                            <h4 class="list-group-item-heading">Lista de Tareas<span class="badge badge-pill badge-inverse">3 Tareas</span></h4>
+                            <p class="list-group-item-text">Lorem ipsum dolor sit.</p>
+                            <div class="buttons">
+                                <a href="" class="btn btn-info btn-sm" title="Administrar">
+                                        <i class="fas fa-check"></i>
+                                </a>
+                                <a href="" class="btn btn-success btn-sm " title="Editar"data-toggle="modal"data-target="#myModal">
+                                        <i class="fas fa-pencil-alt"></i>
+                                </a>
+                                <a href="" class="btn btn-danger btn-sm" title="Eliminar" id="BotonEliminar">
+                                        <i class="fas fa-times"></i>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="list-group-item" id="elemento" >
+                                <h4 class="list-group-item-heading">Lista de Tareas<span class="badge badge-pill badge-inverse">3 Tareas</span></h4>
+                                <p class="list-group-item-text">Lorem ipsum dolor sit.</p>
+                                <div class="buttons">
+                                    <a href="" class="btn btn-info btn-sm" title="Administrar">
+                                            <i class="fas fa-check"></i>
+                                    </a>
+                                    <a href="" class="btn btn-success btn-sm" title="Editar" data-toggle="modal"data-target="#myModal">
+                                            <i class="fas fa-pencil-alt"></i>
+                                    </a>
+                                    <a href="" class="btn btn-danger btn-sm" title="Eliminar" onClick="eliminarElemento(document.getElementById('elemento'));">
+                                            <i class="fas fa-times"></i>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="list-group-item" id="elemento">
+                                    <h4 class="list-group-item-heading">Lista de Tareas<span class="badge badge-pill badge-inverse">3 Tareas</span></h4>
+                                    <p class="list-group-item-text">Lorem ipsum dolor sit.</p>
+                                    <div class="buttons">
+                                        <a href="" class="btn btn-info btn-sm" title="Administrar">
+                                                <i class="fas fa-check"></i>
+                                        </a>
+                                        <a href="" class="btn btn-success btn-sm" title="Editar" data-toggle="modal"data-target="#myModal">
+                                                <i class="fas fa-pencil-alt"></i>
+                                        </a>
+                                        <a href="" class="btn btn-danger btn-sm" title="Eliminar">
+                                                <i class="fas fa-times"></i>
+                                        </a>
+                                    </div>
+                                </li>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fin de Principal-->
+    
+     <!--Barra de Navegacion -->
+    <div class="container-fluid navbar-light bg-light fixed-top barra" id="navbar">
+            <nav class="navbar navbar-expand-lg container">
+                <a class="navbar-brand" href="#"><img src="img/logo-bar.png"   alt="logotype"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Usuario
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                  <a class="dropdown-item" href="#">Logout</a>
+                                </div>
+                              </li>
+                            <!--<li class="nav-item">
+                                <a class="nav-link"href="#" onclick="openNav()">Usuario</a>
+                            </li>-->
+                        </ul>
+                    </div>
+            </nav>
+        </div>
+        <!--Fin de la Barra de navegacion-->
+        <!-- Optional JavaScript -->
+       <script src=js/eliminar.js> </script> 
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script src="js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+</body>
+</html>

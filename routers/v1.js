@@ -1,6 +1,60 @@
 var express = require('express');
 var router = express.Router();
 var todo = require('../modules/TodoDao2.js');
+var persona = require('../modules/PersonaDao.js');
+var session = require('express-session');
+var bodyParser = require('body-parser');
+
+router.use(express.static('views'));
+var jsonParser = bodyParser.json()
+router.use(bodyParser.urlencoded({ extended: true }));
+
+router.use(session({
+	secret: 'keyboard cat',
+}));
+
+var sess;
+
+
+
+router.get('/login', function(req, res){
+	sess = req.session;
+	if(sess.email){
+		res.redirect('ToDoList.html');
+	}
+	else {
+		res.redirect('login.html');
+	}
+});
+
+router.post('/signin', jsonParser, function(req, res) {
+	console.log(JSON.stringify(req.body) + ' /signin');
+	console.log(req.body.email);
+	if(typeof(req.body.email) != undefined){
+		persona.getUser(function(err, results){
+			if(err) {
+				res.status(500);
+				res.json({ error : 'Error en la comunicación con la base de datos.'});
+			}
+			else if(results.length == 0) {
+				res.status(200);
+				res.json({ mensaje : 'No hay datos disponibles.'})
+			}
+			else {
+				console.log(req.body);
+				for (var i = 0; i < results.length; i++) {
+					if( (results[i].Correo == req.body.email) && (results[i].Password == req.body.pw)){
+						res.redirect('ToDoList.html');
+					}
+				}
+			}
+		})
+	}
+	else {
+		res.status(400);
+		res.json({ mensaje : 'Bad request'});
+	}
+})
 
 router.get('/todos', function(req, res) {
 	var personaId = req.query.lista;

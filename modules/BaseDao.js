@@ -8,8 +8,8 @@ var db = {
 		this.con = mysql.createConnection({
 			host: 'localhost',
 			user: 'root',
-			password: 'juan73',
-			database: 'ToDo'
+			password: '',
+			database: 'todo'
 		});
 		this.con.connect(function(err){
 			if(err){
